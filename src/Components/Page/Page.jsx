@@ -22,7 +22,6 @@ const Page = () => {
   const selectHandler = (e) => {
     setCounty(e.target.value);
   };
-  console.log(force);
 
   return (
     <div className={styles.container}>
@@ -35,51 +34,56 @@ const Page = () => {
       </div>
       <div className={styles.container__main}>
         <p>
-          Here you can find information on your local Police force.
+          Here you can see what people in your area have been stopped for.
           <br />
           <br />
-          You can see what they have acheived over the years.
-          <br />
-          <br />
-          You can also get all their social media links.
+          It will show you their ETNICITY, GENDER and CRIME.
         </p>
-        <br />
-        {/* <input
-          onChange={(e) => inputHandler(e)}
-          type="text"
-          name="county"
-          id="county"
-          placeholder="Enter County"
-        ></input>
-        <div className={styles.container__btn}>
-          <button>Search</button>
-        </div> */}
       </div>
+      <div className={styles.container__options}>
+        <select onChange={(e) => selectHandler(e)}>
+          {force.map((det) => {
+            return (
+              <option
+                key={Math.random()}
+                value={det.id}
+                name={det.id}
+                id={det.i}
+              >
+                {det.name}
+              </option>
+            );
+          })}
+        </select>
+        <div className={styles.container__scrollbox}>
+          <table className={styles.container__table}>
+            <tbody>
+              {data.length < 1 ? (
+                <tr>
+                  <td>No Data</td>
+                </tr>
+              ) : (
+                data.map((item) => {
+                  return (
+                    <tr key={Math.random()}>
+                      <td>{item?.officer_defined_ethnicity}</td>
+                      <td> {item?.gender}</td>
+                      <td> {item?.object_of_search}</td>
+                    </tr>
+                  );
+                })
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div className={styles.container__nav}>
         <nav className="nav">
           <Link to="/">
             <button>Back</button>
           </Link>
         </nav>
-        <select onChange={(e) => selectHandler(e)}>
-          {force.map((det) => {
-            return (
-              <option value={det.id} name={det.id} id={det.i}>
-                {det.name}
-              </option>
-            );
-          })}
-        </select>
-        <div>
-          {data.map((data) => {
-            return (
-              <li>
-                <p>{data.gender}</p>
-                <p>{data.object_of_search}</p>
-              </li>
-            );
-          })}
-        </div>
       </div>
     </div>
   );
