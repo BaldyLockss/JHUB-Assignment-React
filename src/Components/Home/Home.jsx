@@ -1,5 +1,5 @@
 import style from "./Home.module.css";
-import Button from "../Button/Button";
+// import Button from "../Button/Button";
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
       <p className={style.container__quote1}>"Protect and Serve!"</p>
       <div className={style.container__background}></div>
       <nav className={style.container__nav1}>
-        <Button>page1</Button>
+        <button>page1</button>
       </nav>
       <div className={style.container__image}>
         <img

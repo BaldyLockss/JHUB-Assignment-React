@@ -1,6 +1,6 @@
-import "./Button.css";
+// import "./Button.css";
 
-const Button = ({ text }) => {
-  return <Button>{text}</Button>;
-};
-export default Button;
+// const Button = ({ text }) => {
+//   return <Button>{text}</Button>;
+// };
+// export default Button;

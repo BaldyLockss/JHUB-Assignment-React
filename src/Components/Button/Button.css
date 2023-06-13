@@ -1,4 +1,4 @@
-button {
+/* button {
   display: flex;
   font-size: var(--button);
   background-color: var(--light-black);
@@ -7,4 +7,4 @@ button {
   padding: var(--padding);
   color: white;
   text-decoration: none;
-}
+} */
