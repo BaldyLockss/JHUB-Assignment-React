@@ -47,6 +47,16 @@
   color: white;
   font-size: clamp(2rem, 5vw, 6rem);
 }
+button {
+  display: flex;
+  font-size: var(--button);
+  background-color: var(--light-black);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: var(--padding);
+  color: white;
+  text-decoration: none;
+}
 
 button:hover {
   background-color: var(--black);
