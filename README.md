@@ -1,7 +1,6 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# JHUB Assessment for creating a dynamic websit
+This web application uses a goverment api in order to list the police constabularies within england and allows you to select the one you want.
+in doing so it will give you a list of how many people was stopped and searched in the area of operation, it will show you the Ethnicity, Gender and why they was stopped.
 ## Available Scripts
 
 In the project directory, you can run:
