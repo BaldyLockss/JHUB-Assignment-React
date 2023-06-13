@@ -5,7 +5,7 @@ const Home = () => {
     <div className={style.container}>
       <p className={style.container__quote1}>"Protect and Serve!"</p>
       <div className={style.container__background}></div>
-      <nav className={style.container__nav1}>
+      <nav className={style.container__nav}>
         <button>page1</button>
       </nav>
       <div className={style.container__image}>
