@@ -8,7 +8,7 @@ const Home = () => {
       <div className={style.container__background}></div>
       <nav className={style.container__nav}>
         <Link to="/Page">
-          <button>page1</button>
+          <button className="page_btn">Enter</button>
         </Link>
       </nav>
       <div className={style.container__image}>

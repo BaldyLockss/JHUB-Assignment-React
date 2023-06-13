@@ -16,10 +16,10 @@ const Page = () => {
           Here you can find information on your local Police force.
           <br />
           <br />
-          You can see what they have acheived over the years
+          You can see what they have acheived over the years.
           <br />
           <br />
-          You can also get all their social media links
+          You can also get all their social media links.
         </p>
         <br />
         <input
@@ -28,6 +28,9 @@ const Page = () => {
           id="county"
           placeholder="Enter County"
         ></input>
+        <div className={styles.container__btn}>
+          <button>Search</button>
+        </div>
       </div>
       <div className={styles.container__nav}>
         <nav className="nav">
