@@ -60,6 +60,12 @@ input[type="text"] {
   color: white;
   text-decoration: none;
 }
+.container__btn > button:hover {
+  background-color: var(--black);
+}
+.county-data {
+  grid-area: main-c;
+}
 @media (max-width: 700px) {
   .container {
     grid-template-columns: 1fr;

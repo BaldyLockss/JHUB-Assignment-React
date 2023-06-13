@@ -1,7 +1,29 @@
 import styles from "./Page.module.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Page = () => {
+  const [force, setForce] = useState([]);
+  const [county, setCounty] = useState("");
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://data.police.uk/api/forces")
+      .then((res) => res.json())
+      .then((data) => setForce(data));
+  }, []);
+
+  useEffect(() => {
+    fetch(`https://data.police.uk/api/stops-force?force=${county}`)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, [county]);
+
+  const selectHandler = (e) => {
+    setCounty(e.target.value);
+  };
+  console.log(force);
+
   return (
     <div className={styles.container}>
       <div className={styles.container__background}></div>
@@ -22,7 +44,8 @@ const Page = () => {
           You can also get all their social media links.
         </p>
         <br />
-        <input
+        {/* <input
+          onChange={(e) => inputHandler(e)}
           type="text"
           name="county"
           id="county"
@@ -30,7 +53,7 @@ const Page = () => {
         ></input>
         <div className={styles.container__btn}>
           <button>Search</button>
-        </div>
+        </div> */}
       </div>
       <div className={styles.container__nav}>
         <nav className="nav">
@@ -38,6 +61,25 @@ const Page = () => {
             <button>Back</button>
           </Link>
         </nav>
+        <select onChange={(e) => selectHandler(e)}>
+          {force.map((det) => {
+            return (
+              <option value={det.id} name={det.id} id={det.i}>
+                {det.name}
+              </option>
+            );
+          })}
+        </select>
+        <div>
+          {data.map((data) => {
+            return (
+              <li>
+                <p>{data.gender}</p>
+                <p>{data.object_of_search}</p>
+              </li>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
